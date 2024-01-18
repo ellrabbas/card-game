@@ -16,6 +16,9 @@ let timeCount = 80;
 let attemptCount = 0;
 let timer;
 
+// Add a variable to track game over state
+let gameOver = false;
+
 // Assign sound variables
 const timeOutSound = new Audio("sounds/oh-no.mp3");
 const winSound = new Audio("sounds/winner.mp3");
@@ -93,6 +96,7 @@ function cardMaker() {
         card.addEventListener('click', function (e) {
             card.classList.toggle('toggleCard');
             verifyCards(e);
+            clickedSound.play();
         });
     });
 };
@@ -105,10 +109,9 @@ function verifyCards(e) {
     const clickedCard = e.target;
 
     // Increase the number of attempts
-    if (win.style.display === "none") {
+    if (win.style.display !== "block") {
         attemptCount++;
         attemptIndicator.textContent = attemptCount;
-        clickedSound.play();
     }
 
 
@@ -122,15 +125,24 @@ function verifyCards(e) {
         if (one.getAttribute("name") == "K4") {
 
             const allCardsRevealed = document.querySelectorAll('.card:not(.hideCard)').length === 1;
-            console.log(allCardsRevealed);
 
             // Determine the appearance of the winner box
             if (allCardsRevealed) {
                 clearInterval(timer);
                 win.style.display = "block";
                 winSound.play();
-            }
 
+
+                if (gameOver) {
+                    winSound.pause();
+                    winSound.currentTime = 0;
+                } else {
+                    winSound.play();
+                    gameOver = true;
+                }
+
+
+            }
         }
     });
 
@@ -182,6 +194,9 @@ function restart() {
 
         // Stop the ongoing timer
         clearInterval(timer);
+
+        // Reset game over state
+        gameOver = false;
 
     });
 
