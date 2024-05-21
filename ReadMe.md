@@ -1,14 +1,14 @@
-# Yaddaş kart oyunu
+# Memory card game
 
-### Proyekt haqqında
+### About the project
 
-80 saniyə içərisində oxşar 20 kart tapılmalıdır. Son bir kart kliklənən zaman qalib elan olunursunuz. Əgər kartlar müəyyən edilmiş vaxt içərisində tapılmasa, uduzursunuz.
+20 similar cards must be found within 80 seconds. When the last card is clicked, you are declared the winner. If the cards are not found within the specified time, you lose.
 
-### Əlavə özəlliklər
+### Additional features
 
-- Vaxt göstəricisi: 80 saniyə qədər bir vaxt aralığı təyin edilmişdir.
-- Cəhd göstərisi: Kartlar kliklənən zaman yuxarıdakı bölmədə oyun boyunca etdiyiniz cəhdlərin sayı göstərilmişdir.
-- Səs effekti: Kartlar klikləndikdə, oyun bitdikdə və yaxud da vaxt bitdikdə brauzerdə gələn bildirişlərə səs effekti əlavə olunmuşdur.
+- Time indicator: A time interval of up to 80 seconds is set.
+- Attempt Display: When cards are clicked, the section above shows the number of attempts you have made throughout the game.
+- Sound effect: A sound effect has been added to the browser notifications when cards are clicked, when the game is over or when the time is up.
 
 
-Sizə oyun oynarkən xoş əyləncələr diləyirəm! &#129303;
+I wish you a lot of fun while playing the game! &#129303;
